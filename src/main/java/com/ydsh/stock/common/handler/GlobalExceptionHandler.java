@@ -1,8 +1,8 @@
 package com.ydsh.stock.common.handler;
 
+import com.ydsh.stock.common.bean.Result;
 import com.ydsh.stock.common.enums.ErrorCode;
 import com.ydsh.stock.common.exception.BizException;
-import com.ydsh.stock.common.bean.Result;
 import com.ydsh.stock.common.exception.SystemException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;

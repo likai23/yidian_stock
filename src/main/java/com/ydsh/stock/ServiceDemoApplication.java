@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-import java.io.IOException;
-
 @SpringBootApplication(exclude = {FreeMarkerAutoConfiguration.class})
 @EnableEurekaClient
 @EnableApolloConfig

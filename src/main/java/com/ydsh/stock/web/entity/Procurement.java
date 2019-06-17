@@ -1,5 +1,5 @@
 /**
- * @filename:Procurement 2019-06-12 11:57:57
+ * @filename:Procurement 2019-06-17 08:19:29
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd. 
  * All right reserved. 
@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -28,10 +27,9 @@ import java.util.Date;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 public class Procurement implements Serializable {
 
-	private static final long serialVersionUID = 1560311877980L;
+	private static final long serialVersionUID = 1560773969732L;
 	
 	@TableId(value = "id", type = IdType.AUTO)
 	@ApiModelProperty(name = "id" , value = "主键ID")

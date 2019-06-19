@@ -1,5 +1,5 @@
 /**
- * @filename:ReviewOutStorage 2019-06-17 08:19:30
+ * @filename:ReviewOutStorage 2019-06-18 04:10:13
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd. 
  * All right reserved. 
@@ -29,7 +29,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 public class ReviewOutStorage implements Serializable {
 
-	private static final long serialVersionUID = 1560773970499L;
+	private static final long serialVersionUID = 1560845413884L;
 	
 	@TableId(value = "id", type = IdType.AUTO)
 	@ApiModelProperty(name = "id" , value = "主键ID")

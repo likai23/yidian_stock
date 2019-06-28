@@ -79,4 +79,28 @@ public class PurchasApplyDetail implements Serializable {
     @JSONField(serialize = false)
     @TableField(exist = false)
     private List<Long> idList;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JSONField(serialize = false)
+    @ApiModelProperty(name = "createStartTime", value = "提交开始时间")
+    @TableField(exist = false)
+    private Date createStartTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JSONField(serialize = false)
+    @ApiModelProperty(name = "createEndtTime", value = "提交结束时间")
+    @TableField(exist = false)
+    private Date createEndTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JSONField(serialize = false)
+    @ApiModelProperty(name = "reviewStartTime", value = "审核开始时间")
+    @TableField(exist = false)
+    private Date reviewStartTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JSONField(serialize = false)
+    @ApiModelProperty(name = "reviewEndTime", value = "审核结束时间")
+    @TableField(exist = false)
+    private Date reviewEndTime;
 }

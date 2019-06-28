@@ -66,7 +66,6 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
             log.error("【新增采购申请】{}，请求参数：{}", "参数空异常", entity);
             return result.error("请完善必填项！");
         }
-
         List<PurchasApplyDetail> detail = entity.getDetail();
         int bpaProductNum = 0;
         for (PurchasApplyDetail purchasApplyDetail : detail) {
@@ -94,11 +93,10 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
             purchasApplyDetail.setPurchasApplyId(purchasApply.getId());
             purchasApplyDetail.setCreateId(entity.getCreateId());
             purchasApplyDetail.setCreateName(entity.getCreateName());
-            purchasApplyDetail.setReviewStatus(DBDictionaryEnumManager.review_0.getkey());
+            purchasApplyDetail.setReviewStatus(DBDictionaryEnumManager.purchase_status_3.getkey());
         }
         purchasApplyDetailServiceImpl.saveBatch(detail);
         return result.success("操作成功！");
-
     }
 
     /**
@@ -130,7 +128,7 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
                 log.error("【采购申请修改】{}，请求参数：{}", "参数空异常", entity);
                 return result.error("请完善必填项！");
             }
-            purchasApplyDetail.setReviewStatus(DBDictionaryEnumManager.review_0.getkey());
+            purchasApplyDetail.setReviewStatus(DBDictionaryEnumManager.purchase_status_3.getkey());
             purchasApplyDetail.setPurchasApplyId(entity.getId());
             bpaProductNum += purchasApplyDetail.getProductNum();
         }
@@ -139,7 +137,7 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
                 new QueryWrapper<PurchasApplyDetail>().lambda()
                         .eq(PurchasApplyDetail::getPurchasApplyId, entity.getId()));
         // 统计非未处理的数量
-        long num = purchasApplyDetailList.stream().filter(purchasApplyDetail -> !DBDictionaryEnumManager.review_0.getkey().equals(purchasApplyDetail.getReviewStatus())).count();
+        long num = purchasApplyDetailList.stream().filter(purchasApplyDetail -> !DBDictionaryEnumManager.purchase_status_3.getkey().equals(purchasApplyDetail.getReviewStatus())).count();
         if (num > 0) {
             log.error("【采购申请修改】{}，请求参数：{}", "该采购申请订单无法修改,存在不可修改的状态！", entity);
             return result.error("该采购申请订单无法修改！");
@@ -196,7 +194,7 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
         // 判断类型 // 如果是修改的话，需要判断是否是可修改的数据
         if (CommonConstans.NUM_1 == entity.getType()) {
             // 统计非未处理的数量
-            long num = purchasApplyDetails.stream().filter(applyDetail -> !DBDictionaryEnumManager.review_0.getkey().equals(applyDetail.getReviewStatus())).count();
+            long num = purchasApplyDetails.stream().filter(applyDetail -> !DBDictionaryEnumManager.purchase_status_3.getkey().equals(applyDetail.getReviewStatus())).count();
             if (num > 0) {
                 log.error("【采购申请修改查看/查看详情】{}，请求参数：{}", "该采购申请订单无法修改,存在不可修改的状态！", entity);
                 return result.error("该采购申请订单无法修改！");
@@ -230,7 +228,7 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
             return result.error("该采购申请订单无法删除，该采购申请异常存在，请联系管理员！");
         }
         // 统计非未处理的数量
-        long num = purchasApplyDetails.stream().filter(applyDetail -> !DBDictionaryEnumManager.review_0.getkey().equals(applyDetail.getReviewStatus())).count();
+        long num = purchasApplyDetails.stream().filter(applyDetail -> !DBDictionaryEnumManager.purchase_status_3.getkey().equals(applyDetail.getReviewStatus())).count();
         if (num > 0) {
             log.error("【采购申请删除操作】{}，请求参数：{}", "该采购申请订单无法删除,存在不可删除的状态！", entity);
             return result.error("该采购申请订单无法删除！");
@@ -246,7 +244,6 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
                 new QueryWrapper<PurchasApplyDetail>().lambda().eq(PurchasApplyDetail::getPurchasApplyId, entity.getId())
         );
         return result.error("操作成功！");
-
     }
 
     /**

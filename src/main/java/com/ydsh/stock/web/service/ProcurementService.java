@@ -17,5 +17,11 @@ import com.ydsh.stock.web.entity.Procurement;
  * 
  */
 public interface ProcurementService extends IService<Procurement> {
-	
+    /**
+     * 增加采购主表信息，并且返回主键id
+     *
+     * @param procurement
+     * @return
+     */
+    Procurement saveReId(Procurement procurement);
 }

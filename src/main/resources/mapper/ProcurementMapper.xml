@@ -2,55 +2,56 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ProcurementDao">
     <!-- 返回结果集Map -->
-    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.Procurement">
-        <id column="id" jdbcType="BIGINT" property="id" />
-        <result column="id" jdbcType="BIGINT" property="id" />
-        <result column="procurement_no" jdbcType="VARCHAR" property="procurementNo" />
-        <result column="create_id" jdbcType="BIGINT" property="createId" />
-        <result column="review_id" jdbcType="BIGINT" property="reviewId" />
-        <result column="supplier_id" jdbcType="BIGINT" property="supplierId" />
-        <result column="supplier_no" jdbcType="VARCHAR" property="supplierNo" />
-        <result column="supplier_name" jdbcType="VARCHAR" property="supplierName" />
-        <result column="in_storage_id" jdbcType="BIGINT" property="inStorageId" />
-        <result column="procurement_stype" jdbcType="VARCHAR" property="procurementStype" />
-        <result column="total_num" jdbcType="INTEGER" property="totalNum" />
-        <result column="total_amount" jdbcType="BIGINT" property="totalAmount" />
-        <result column="in_storage_no" jdbcType="VARCHAR" property="inStorageNo" />
-        <result column="remarks" jdbcType="VARCHAR" property="remarks" />
-        <result column="review_remarks" jdbcType="VARCHAR" property="reviewRemarks" />
-        <result column="review_status" jdbcType="VARCHAR" property="reviewStatus" />
-        <result column="create_name" jdbcType="VARCHAR" property="createName" />
-        <result column="review_name" jdbcType="VARCHAR" property="reviewName" />
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <resultMap id="BaseResultMap" type="com.elife.boss.persistence.model.Procurement">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="procurement_no" jdbcType="VARCHAR" property="procurementNo"/>
+        <result column="create_id" jdbcType="BIGINT" property="createId"/>
+        <result column="review_id" jdbcType="BIGINT" property="reviewId"/>
+        <result column="supplier_id" jdbcType="BIGINT" property="supplierId"/>
+        <result column="supplier_no" jdbcType="VARCHAR" property="supplierNo"/>
+        <result column="supplier_name" jdbcType="VARCHAR" property="supplierName"/>
+        <result column="in_storage_id" jdbcType="BIGINT" property="inStorageId"/>
+        <result column="procurement_type" jdbcType="VARCHAR" property="procurementType"/>
+        <result column="total_num" jdbcType="INTEGER" property="totalNum"/>
+        <result column="total_amount" jdbcType="BIGINT" property="totalAmount"/>
+        <result column="in_storage_no" jdbcType="VARCHAR" property="inStorageNo"/>
+        <result column="remarks" jdbcType="VARCHAR" property="remarks"/>
+        <result column="review_remarks" jdbcType="VARCHAR" property="reviewRemarks"/>
+        <result column="review_status" jdbcType="VARCHAR" property="reviewStatus"/>
+        <result column="create_name" jdbcType="VARCHAR" property="createName"/>
+        <result column="review_name" jdbcType="VARCHAR" property="reviewName"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
     </resultMap>
+
     <!--数据列-->
-    <sql id="Base_Column_List" >
-        id,
-        procurement_no,
-        create_id,
-        review_id,
-        supplier_id,
-        supplier_no,
-        supplier_name,
-        in_storage_id,
-        procurement_stype,
-        total_num,
-        total_amount,
-        in_storage_no,
-        remarks,
-        review_remarks,
-        review_status,
-        create_name,
-        review_name,
-        create_time
+    <sql id="Base_Column_List">
+            id,
+            procurement_no,
+            create_id,
+            review_id,
+            supplier_id,
+            supplier_no,
+            supplier_name,
+            in_storage_id,
+            procurement_type,
+            total_num,
+            total_amount,
+            in_storage_no,
+            remarks,
+            review_remarks,
+            review_status,
+            create_name,
+            review_name,
+            create_time
     </sql>
 
-    <!-- 新增采购申请，并且返回新增的id -->
+    <!-- 新增采购订单，并且返回新增的id -->
     <insert id="saveReId" parameterType="com.ydsh.stock.web.entity.Procurement">
         <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into ${locationSchema}.procurement (
+        insert into procurement (
         id,
         procurement_no,
         create_id,
@@ -59,7 +60,7 @@
         supplier_no,
         supplier_name,
         in_storage_id,
-        procurement_stype,
+        procurement_type,
         total_num,
         total_amount,
         in_storage_no,
@@ -78,7 +79,7 @@
         #{supplierNo,jdbcType=VARCHAR},
         #{supplierName,jdbcType=VARCHAR},
         #{inStorageId,jdbcType=BIGINT},
-        #{procurementStype,jdbcType=VARCHAR},
+        #{procurementType,jdbcType=VARCHAR},
         #{totalNum,jdbcType=INTEGER},
         #{totalAmount,jdbcType=BIGINT},
         #{inStorageNo,jdbcType=VARCHAR},

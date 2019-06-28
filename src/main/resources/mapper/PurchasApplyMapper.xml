@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.PurchasApplyDao">
+    <!-- 返回结果集Map -->
+    <resultMap id="BaseResultMap" type="com.elife.boss.persistence.model.PurchasApply">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="id" jdbcType="BIGINT" property="id"/>
+        <result column="purchas_apply_no" jdbcType="VARCHAR" property="purchasApplyNo"/>
+        <result column="product_num" jdbcType="INTEGER" property="productNum"/>
+        <result column="create_id" jdbcType="BIGINT" property="createId"/>
+        <result column="create_name" jdbcType="VARCHAR" property="createName"/>
+        <result column="remarks" jdbcType="VARCHAR" property="remarks"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
 
+    <!--数据列-->
+    <sql id="Base_Column_List">
+        id,
+        purchas_apply_no,
+        product_num,
+        create_id,
+        create_name,
+        remarks,
+        create_time
+    </sql>
+    <!-- 新增采购申请，并且返回新增的id -->
+    <insert id="saveReId" parameterType="com.ydsh.stock.web.entity.PurchasApply">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into purchas_apply (
+        id,
+        purchas_apply_no,
+        product_num,
+        create_id,
+        create_name,
+        remarks,
+        create_time
+        ) values (
+        #{id,jdbcType=BIGINT},
+        #{purchasApplyNo,jdbcType=VARCHAR},
+        #{productNum,jdbcType=INTEGER},
+        #{createId,jdbcType=BIGINT},
+        #{createName,jdbcType=VARCHAR},
+        #{remarks,jdbcType=VARCHAR},
+        #{createTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
 
 </mapper>

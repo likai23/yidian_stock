@@ -1,5 +1,5 @@
 /**
- * @filename:PurchasApplyDetail 2019-06-18 04:10:13
+ * @filename:PurchasApplyDetail 2019-07-01 09:29:54
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd.
  * All right reserved.

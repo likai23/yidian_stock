@@ -103,4 +103,8 @@ public class ReviewStorage implements Serializable {
     @JSONField(serialize = false)
     @TableField(exist = false)
     private List<ReviewStorageDetails> detail;
+    @ApiModelProperty(name = "idList", value = "批量处理，id传参")
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<Long> idList;
 }

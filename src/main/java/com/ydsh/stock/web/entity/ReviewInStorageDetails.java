@@ -1,5 +1,5 @@
 /**
- * @filename:ReviewInStorageDetails 2019-06-18 04:10:13
+ * @filename:ReviewInStorageDetails 2019-07-02 11:30:02
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd. 
  * All right reserved. 
@@ -29,7 +29,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 public class ReviewInStorageDetails implements Serializable {
 
-	private static final long serialVersionUID = 1560845413808L;
+	private static final long serialVersionUID = 1562038202355L;
 	
 	@TableId(value = "id", type = IdType.AUTO)
 	@ApiModelProperty(name = "id" , value = "主键ID")
@@ -38,6 +38,16 @@ public class ReviewInStorageDetails implements Serializable {
 	private Long reviewInStorageId;
 	@ApiModelProperty(name = "gcsId" , value = "sku id")
 	private Long gcsId;
+	@ApiModelProperty(name = "gcsNo" , value = "编号")
+	private String gcsNo;
+	@ApiModelProperty(name = "gcsSku" , value = "sku")
+	private String gcsSku;
+	@ApiModelProperty(name = "gcsName" , value = "商品名称")
+	private String gcsName;
+	@ApiModelProperty(name = "gcsDenomination" , value = "面值")
+	private Long gcsDenomination;
+	@ApiModelProperty(name = "gcsType" , value = "商品属性")
+	private String gcsType;
 	@ApiModelProperty(name = "supplyPrice" , value = "供应价")
 	private Long supplyPrice;
 	@ApiModelProperty(name = "taxRate" , value = "税率")

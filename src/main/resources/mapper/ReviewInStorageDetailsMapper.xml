@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ReviewInStorageDetailsDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.ReviewInStorageDetails">
+        <id column="id" property="id" />
+        <id column="review_in_storage_id" property="reviewInStorageId" />
+        <id column="gc_id" property="gcId" />
+        <id column="gc_no" property="gcNo" />
+        <id column="gc_sku" property="gcSku" />
+        <id column="gc_name" property="gcName" />
+        <id column="gc_denomination" property="gcDenomination" />
+        <id column="gc_type" property="gcType" />
+        <id column="supply_price" property="supplyPrice" />
+        <id column="tax_rate" property="taxRate" />
+        <id column="invoice_type" property="invoiceType" />
+        <id column="settlement_type" property="settlementType" />
+        <id column="is_extension" property="isExtension" />
+        <id column="procurement_num" property="procurementNum" />
+        <id column="expected_in_storage_num" property="expectedInStorageNum" />
+        <id column="actual_in_storage_num" property="actualInStorageNum" />
+        <id column="effective_start_time" property="effectiveStartTime" />
+        <id column="effective_end_time" property="effectiveEndTime" />
+        <id column="file_name" property="fileName" />
+        <id column="file_url" property="fileUrl" />
+        <id column="content" property="content" />
+        <id column="create_time" property="createTime" />
+        <id column="remarks" property="remarks" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, review_in_storage_id, gc_id, gc_no, gc_sku, gc_name, gc_denomination, gc_type, supply_price, tax_rate, invoice_type, settlement_type, is_extension, procurement_num, expected_in_storage_num, actual_in_storage_num, effective_start_time, effective_end_time, file_name, file_url, content, create_time, remarks
+    </sql>
 </mapper>

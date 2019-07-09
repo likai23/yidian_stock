@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.PurchasApplyDetailDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.PurchasApplyDetail">
+        <id column="id" property="id" />
+        <id column="create_id" property="createId" />
+        <id column="review_id" property="reviewId" />
+        <id column="purchas_apply_id" property="purchasApplyId" />
+        <id column="gc_id" property="gcId" />
+        <id column="gc_no" property="gcNo" />
+        <id column="gc_sku" property="gcSku" />
+        <id column="gc_name" property="gcName" />
+        <id column="gc_denomination" property="gcDenomination" />
+        <id column="gc_type" property="gcType" />
+        <id column="gc_nature" property="gcNature" />
+        <id column="product_num" property="productNum" />
+        <id column="review_status" property="reviewStatus" />
+        <id column="create_name" property="createName" />
+        <id column="review_name" property="reviewName" />
+        <id column="create_time" property="createTime" />
+        <id column="review_time" property="reviewTime" />
+        <id column="remarks" property="remarks" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, create_id, review_id, purchas_apply_id, gc_id, gc_no, gc_sku, gc_name, gc_denomination, gc_type, gc_nature, product_num, review_status, create_name, review_name, create_time, review_time, remarks
+    </sql>
 </mapper>

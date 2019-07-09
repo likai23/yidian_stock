@@ -1,5 +1,5 @@
 /**
- * @filename:ReviewStorage 2019-06-27 04:08:16
+ * @filename:ReviewStorage 2019-07-09 08:35:06
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd.
  * All right reserved.
@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * <p>代码自动生成，请勿修改</p>
  * <p>
- * <p>说明： 采购订单主表实体类</P>
+ * <p>说明： 作废、延期、冻结、加密导出审核申请主表实体类</P>
  *
  * @version: V1.0
  * @author: <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a>
@@ -32,7 +32,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class ReviewStorage implements Serializable {
 
-    private static final long serialVersionUID = 1561622896275L;
+    private static final long serialVersionUID = 1562675706472L;
 
     @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(name = "id", value = "主键ID")
@@ -41,17 +41,17 @@ public class ReviewStorage implements Serializable {
     private String reviewStorageNo;
     @ApiModelProperty(name = "storageDetailsId", value = "已出库id、未出库id")
     private Long storageDetailsId;
-    @ApiModelProperty(name = "gcsId", value = "skuId")
-    private Long gcsId;
-    @ApiModelProperty(name = "gcsName", value = "商品名称")
-    private String gcsName;
-    @ApiModelProperty(name = "gcsForm", value = "券码形式（商品形式）")
-    private String gcsForm;
+    @ApiModelProperty(name = "gcId", value = "skuId")
+    private Long gcId;
+    @ApiModelProperty(name = "gcName", value = "商品名称")
+    private String gcName;
+    @ApiModelProperty(name = "gcForm", value = "券码形式（商品形式）")
+    private String gcForm;
     @ApiModelProperty(name = "afterSaleOderId", value = "售后订单编号")
     private Long afterSaleOderId;
-    @ApiModelProperty(name = "expiredType", value = "延期类型：原有效结束时间延期 ： 1 、原虚拟结束时间延期 ： 2")
+    @ApiModelProperty(name = "expiredType", value = "延期类型：原有效结束时间延期、原虚拟结束时间延期")
     private String expiredType;
-    @ApiModelProperty(name = "reviewType", value = "（作废：1、延期：2、冻结：3、加密导出：4）")
+    @ApiModelProperty(name = "reviewType", value = "（作废、延期）")
     private String reviewType;
     @ApiModelProperty(name = "reviewContent", value = "申请说明")
     private String reviewContent;
@@ -67,12 +67,12 @@ public class ReviewStorage implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @ApiModelProperty(name = "finalEndTime", value = "延期后的最终结束时间")
     private Date finalEndTime;
-    @ApiModelProperty(name = "couponStatus", value = "（未出库：0、已过期：3）决定未出库id 和 已出库id 的绑定值")
+    @ApiModelProperty(name = "couponStatus", value = "（未出库、已过期）决定未出库id 和 已出库id 的绑定值")
     private String couponStatus;
     @ApiModelProperty(name = "reviewStorageNum", value = "子表券码数量")
     private Integer reviewStorageNum;
-    @ApiModelProperty(name = "orNotExport", value = "是否导出 是：0 否：1")
-    private String orNotExport;
+    @ApiModelProperty(name = "isExport", value = "是否导出")
+    private String isExport;
     @ApiModelProperty(name = "exportName", value = "导码人")
     private String exportName;
     @ApiModelProperty(name = "exportPhone", value = "导出人手机号码")
@@ -98,7 +98,7 @@ public class ReviewStorage implements Serializable {
     @ApiModelProperty(name = "createTime", value = "提交时间/创建时间（自动生成）")
     private Date createTime;
     @ApiModelProperty(name = "remarks", value = "备注")
-    private Long remarks;
+    private String remarks;
     @ApiModelProperty(name = "detail", value = "子表数据")
     @JSONField(serialize = false)
     @TableField(exist = false)

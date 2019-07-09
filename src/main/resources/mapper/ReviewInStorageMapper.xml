@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ReviewInStorageDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.ReviewInStorage">
+        <id column="id" property="id" />
+        <id column="review_in_storage_no" property="reviewInStorageNo" />
+        <id column="purchasing_apply_id" property="purchasingApplyId" />
+        <id column="purchasing_apply_no" property="purchasingApplyNo" />
+        <id column="supplier_id" property="supplierId" />
+        <id column="supplier_no" property="supplierNo" />
+        <id column="supplier_name" property="supplierName" />
+        <id column="review_status" property="reviewStatus" />
+        <id column="review_in_storage_type" property="reviewInStorageType" />
+        <id column="content" property="content" />
+        <id column="review_remarks" property="reviewRemarks" />
+        <id column="procurement_num" property="procurementNum" />
+        <id column="actual_num" property="actualNum" />
+        <id column="create_id" property="createId" />
+        <id column="review_id" property="reviewId" />
+        <id column="create_name" property="createName" />
+        <id column="review_name" property="reviewName" />
+        <id column="review_time" property="reviewTime" />
+        <id column="create_time" property="createTime" />
+        <id column="remarks" property="remarks" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, review_in_storage_no, purchasing_apply_id, purchasing_apply_no, supplier_id, supplier_no, supplier_name, review_status, review_in_storage_type, content, review_remarks, procurement_num, actual_num, create_id, review_id, create_name, review_name, review_time, create_time, remarks
+    </sql>
 </mapper>

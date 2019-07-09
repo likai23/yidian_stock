@@ -18,10 +18,5 @@ import com.ydsh.stock.web.entity.PurchasApply;
  *
  */
 public interface PurchasApplyService extends IService<PurchasApply> {
-    /**
-     * 增加采购主表信息，并且返回主键id
-     * @param entity
-     * @return
-     */
-    PurchasApply saveReId(PurchasApply entity);
+
 }

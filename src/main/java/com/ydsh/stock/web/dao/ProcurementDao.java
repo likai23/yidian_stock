@@ -20,11 +20,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface ProcurementDao extends BaseMapper<Procurement> {
-    /**
-     * 增加采购主表信息，并且返回主键id
-     *
-     * @param procurement
-     * @return
-     */
-    Procurement saveReId(Procurement procurement);
+
 }

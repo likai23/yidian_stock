@@ -22,14 +22,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProcurementServiceImpl extends ServiceImpl<ProcurementDao, Procurement> implements ProcurementService {
-    /**
-     * 增加采购主表信息，并且返回主键id
-     *
-     * @param procurement
-     * @return
-     */
-    @Override
-    public Procurement saveReId(Procurement procurement) {
-        return baseMapper.saveReId(procurement);
-    }
+
 }

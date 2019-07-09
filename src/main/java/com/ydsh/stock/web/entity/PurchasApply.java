@@ -1,5 +1,5 @@
 /**
- * @filename:PurchasApply 2019-06-18 04:10:13
+ * @filename:PurchasApply 2019-07-09 08:35:06
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd.
  * All right reserved.
@@ -32,7 +32,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class PurchasApply implements Serializable {
 
-    private static final long serialVersionUID = 1560845413553L;
+    private static final long serialVersionUID = 1562675706016L;
 
     @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(name = "id", value = "主键ID")

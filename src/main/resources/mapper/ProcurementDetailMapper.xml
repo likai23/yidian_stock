@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ProcurementDetailDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.ProcurementDetail">
+        <id column="id" property="id" />
+        <id column="procurement_id" property="procurementId" />
+        <id column="gc_id" property="gcId" />
+        <id column="gc_no" property="gcNo" />
+        <id column="gc_sku" property="gcSku" />
+        <id column="gc_name" property="gcName" />
+        <id column="gc_denomination" property="gcDenomination" />
+        <id column="gc_type" property="gcType" />
+        <id column="gc_nature" property="gcNature" />
+        <id column="tax_rate" property="taxRate" />
+        <id column="supply_price" property="supplyPrice" />
+        <id column="invoice_type" property="invoiceType" />
+        <id column="settlement_type" property="settlementType" />
+        <id column="is_extension" property="isExtension" />
+        <id column="product_num" property="productNum" />
+        <id column="remarks" property="remarks" />
+        <id column="create_time" property="createTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, procurement_id, gc_id, gc_no, gc_sku, gc_name, gc_denomination, gc_type, gc_nature, tax_rate, supply_price, invoice_type, settlement_type, is_extension, product_num, remarks, create_time
+    </sql>
 </mapper>

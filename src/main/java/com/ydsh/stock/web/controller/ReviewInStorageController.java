@@ -71,17 +71,17 @@ public class ReviewInStorageController extends AbstractController<ReviewInStorag
             return result.error("请完善必填项！");
         }
         for (ReviewInStorageDetails reviewInStorageDetails : entity.getDetail()) {
-            if (reviewInStorageDetails.getGcsId() == null
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsNo())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsSku())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsName())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsType())
-                    || reviewInStorageDetails.getGcsDenomination() == null
+            if (reviewInStorageDetails.getGcId() == null
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcNo())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcSku())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcName())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcType())
+                    || reviewInStorageDetails.getGcDenomination() == null
                     || reviewInStorageDetails.getSupplyPrice() == null
                     || reviewInStorageDetails.getTaxRate() == null
                     || StringUtils.isEmpty(reviewInStorageDetails.getInvoiceType())
                     || StringUtils.isEmpty(reviewInStorageDetails.getSettlementType())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getOrNotExtension())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getIsExtension())
                     || reviewInStorageDetails.getProcurementNum() == null
                     || reviewInStorageDetails.getExpectedInStorageNum() == null
                     || reviewInStorageDetails.getActualInStorageNum() == null
@@ -144,17 +144,17 @@ public class ReviewInStorageController extends AbstractController<ReviewInStorag
             return result.error("此入库单不符合修改条件，无法修改，请选择正确的入库单进行操作！");
         }
         for (ReviewInStorageDetails reviewInStorageDetails : entity.getDetail()) {
-            if (reviewInStorageDetails.getGcsId() == null
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsNo())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsSku())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsName())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getGcsType())
-                    || reviewInStorageDetails.getGcsDenomination() == null
+            if (reviewInStorageDetails.getGcId() == null
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcNo())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcSku())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcName())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getGcType())
+                    || reviewInStorageDetails.getGcDenomination() == null
                     || reviewInStorageDetails.getSupplyPrice() == null
                     || reviewInStorageDetails.getTaxRate() == null
                     || StringUtils.isEmpty(reviewInStorageDetails.getInvoiceType())
                     || StringUtils.isEmpty(reviewInStorageDetails.getSettlementType())
-                    || StringUtils.isEmpty(reviewInStorageDetails.getOrNotExtension())
+                    || StringUtils.isEmpty(reviewInStorageDetails.getIsExtension())
                     || reviewInStorageDetails.getProcurementNum() == null
                     || reviewInStorageDetails.getExpectedInStorageNum() == null
                     || reviewInStorageDetails.getActualInStorageNum() == null

@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ReviewStorageDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.ReviewStorage">
+        <id column="id" property="id" />
+        <id column="review_storage_no" property="reviewStorageNo" />
+        <id column="storage_details_id" property="storageDetailsId" />
+        <id column="gc_id" property="gcId" />
+        <id column="gc_name" property="gcName" />
+        <id column="gc_form" property="gcForm" />
+        <id column="after_sale_oder_id" property="afterSaleOderId" />
+        <id column="expired_type" property="expiredType" />
+        <id column="review_type" property="reviewType" />
+        <id column="review_content" property="reviewContent" />
+        <id column="effective_end_time" property="effectiveEndTime" />
+        <id column="virtual_end_time" property="virtualEndTime" />
+        <id column="final_end_time" property="finalEndTime" />
+        <id column="coupon_status" property="couponStatus" />
+        <id column="review_storage_num" property="reviewStorageNum" />
+        <id column="is_export" property="isExport" />
+        <id column="export_name" property="exportName" />
+        <id column="export_phone" property="exportPhone" />
+        <id column="review_status" property="reviewStatus" />
+        <id column="review_remarks" property="reviewRemarks" />
+        <id column="review_time" property="reviewTime" />
+        <id column="create_id" property="createId" />
+        <id column="review_id" property="reviewId" />
+        <id column="create_name" property="createName" />
+        <id column="review_name" property="reviewName" />
+        <id column="create_time" property="createTime" />
+        <id column="remarks" property="remarks" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, review_storage_no, storage_details_id, gc_id, gc_name, gc_form, after_sale_oder_id, expired_type, review_type, review_content, effective_end_time, virtual_end_time, final_end_time, coupon_status, review_storage_num, is_export, export_name, export_phone, review_status, review_remarks, review_time, create_id, review_id, create_name, review_name, create_time, remarks
+    </sql>
 </mapper>

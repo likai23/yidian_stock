@@ -20,11 +20,4 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface PurchasApplyDao extends BaseMapper<PurchasApply> {
-    /**
-     * 增加采购主表信息，并且返回主键id
-     *
-     * @param entity
-     * @return
-     */
-    PurchasApply saveReId(PurchasApply entity);
 }

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ReviewOutStorageDetailsDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.ReviewOutStorageDetails">
+        <id column="id" property="id" />
+        <id column="review_out_storage_id" property="reviewOutStorageId" />
+        <id column="gc_id" property="gcId" />
+        <id column="special_sell_price" property="specialSellPrice" />
+        <id column="num" property="num" />
+        <id column="create_time" property="createTime" />
+        <id column="remarks" property="remarks" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, review_out_storage_id, gc_id, special_sell_price, num, create_time, remarks
+    </sql>
 </mapper>

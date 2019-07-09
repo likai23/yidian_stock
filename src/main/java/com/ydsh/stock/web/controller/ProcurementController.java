@@ -77,18 +77,18 @@ public class ProcurementController extends AbstractController<ProcurementService
             }
             int ProductNum = 0;
             for (ProcurementDetail procurementDetail : procurement.getDetail()) {
-                if (procurementDetail.getGcsId() == null
-                        || StringUtils.isEmpty(procurementDetail.getGcsNo())
-                        || StringUtils.isEmpty(procurementDetail.getGcsSku())
-                        || StringUtils.isEmpty(procurementDetail.getGcsName())
-                        || procurementDetail.getGcsDenomination() == null
-                        || StringUtils.isEmpty(procurementDetail.getGcsType())
-                        || StringUtils.isEmpty(procurementDetail.getGcsNature())
+                if (procurementDetail.getGcId() == null
+                        || StringUtils.isEmpty(procurementDetail.getGcNo())
+                        || StringUtils.isEmpty(procurementDetail.getGcSku())
+                        || StringUtils.isEmpty(procurementDetail.getGcName())
+                        || procurementDetail.getGcDenomination() == null
+                        || StringUtils.isEmpty(procurementDetail.getGcType())
+                        || StringUtils.isEmpty(procurementDetail.getGcNature())
                         || procurementDetail.getTaxRate() == null
                         || procurementDetail.getSupplyPrice() == null
                         || StringUtils.isEmpty(procurementDetail.getInvoiceType())
                         || StringUtils.isEmpty(procurementDetail.getSettlementType())
-                        || StringUtils.isEmpty(procurementDetail.getOrNotExtension())
+                        || StringUtils.isEmpty(procurementDetail.getIsExtension())
                         || procurementDetail.getProductNum() == null) {
                     return result.error("请完善必填项！");
                 }
@@ -100,8 +100,7 @@ public class ProcurementController extends AbstractController<ProcurementService
         }
         for (Procurement procurement : entity) {
             procurement.setProcurementNo(DBKeyGenerator.generatorDBKey(DBBusinessKeyTypeEnums.P, null));
-            Procurement reId = baseService.saveReId(procurement);
-            procurement.setId(reId.getId());
+            baseService.save(procurement);
         }
         List<ProcurementDetail> procurementDetails = new ArrayList<ProcurementDetail>();
         entity.stream().forEach(procurement -> {
@@ -139,18 +138,18 @@ public class ProcurementController extends AbstractController<ProcurementService
         }
         int ProductNum = 0;
         for (ProcurementDetail procurementDetail : entity.getDetail()) {
-            if (procurementDetail.getGcsId() == null
-                    || StringUtils.isEmpty(procurementDetail.getGcsNo())
-                    || StringUtils.isEmpty(procurementDetail.getGcsSku())
-                    || StringUtils.isEmpty(procurementDetail.getGcsName())
-                    || procurementDetail.getGcsDenomination() == null
-                    || StringUtils.isEmpty(procurementDetail.getGcsType())
-                    || StringUtils.isEmpty(procurementDetail.getGcsNature())
+            if (procurementDetail.getGcId() == null
+                    || StringUtils.isEmpty(procurementDetail.getGcNo())
+                    || StringUtils.isEmpty(procurementDetail.getGcSku())
+                    || StringUtils.isEmpty(procurementDetail.getGcName())
+                    || procurementDetail.getGcDenomination() == null
+                    || StringUtils.isEmpty(procurementDetail.getGcType())
+                    || StringUtils.isEmpty(procurementDetail.getGcNature())
                     || procurementDetail.getTaxRate() == null
                     || procurementDetail.getSupplyPrice() == null
                     || StringUtils.isEmpty(procurementDetail.getInvoiceType())
                     || StringUtils.isEmpty(procurementDetail.getSettlementType())
-                    || StringUtils.isEmpty(procurementDetail.getOrNotExtension())
+                    || StringUtils.isEmpty(procurementDetail.getIsExtension())
                     || procurementDetail.getProductNum() == null) {
                 procurementDetail.setId(null);
                 log.error("【采购单修改】{}，请求参数：{}", "子表参数空异常", entity);

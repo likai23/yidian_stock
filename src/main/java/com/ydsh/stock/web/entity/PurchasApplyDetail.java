@@ -1,5 +1,5 @@
 /**
- * @filename:PurchasApplyDetail 2019-07-01 09:29:54
+ * @filename:PurchasApplyDetail 2019-07-09 08:35:06
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd.
  * All right reserved.
@@ -32,7 +32,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class PurchasApplyDetail implements Serializable {
 
-    private static final long serialVersionUID = 1560845413641L;
+    private static final long serialVersionUID = 1562675706091L;
 
     @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(name = "id", value = "主键ID")
@@ -43,20 +43,20 @@ public class PurchasApplyDetail implements Serializable {
     private Long reviewId;
     @ApiModelProperty(name = "purchasApplyId", value = "采购申请主表ID")
     private Long purchasApplyId;
-    @ApiModelProperty(name = "gcsId", value = "sku id")
-    private Long gcsId;
-    @ApiModelProperty(name = "gcsNo", value = "编号")
-    private String gcsNo;
-    @ApiModelProperty(name = "gcsSku", value = "sku")
-    private String gcsSku;
-    @ApiModelProperty(name = "gcsName", value = "商品名称")
-    private String gcsName;
-    @ApiModelProperty(name = "gcsDenomination", value = "面值")
-    private Long gcsDenomination;
-    @ApiModelProperty(name = "gcsType", value = "商品属性")
-    private String gcsType;
-    @ApiModelProperty(name = "gcsNature", value = "商品性质")
-    private String gcsNature;
+    @ApiModelProperty(name = "gcId", value = "sku id")
+    private Long gcId;
+    @ApiModelProperty(name = "gcNo", value = "编号")
+    private String gcNo;
+    @ApiModelProperty(name = "gcSku", value = "sku")
+    private String gcSku;
+    @ApiModelProperty(name = "gcName", value = "商品名称")
+    private String gcName;
+    @ApiModelProperty(name = "gcDenomination", value = "面值")
+    private Long gcDenomination;
+    @ApiModelProperty(name = "gcType", value = "商品属性")
+    private String gcType;
+    @ApiModelProperty(name = "gcNature", value = "商品性质")
+    private String gcNature;
     @ApiModelProperty(name = "productNum", value = "数量")
     private Integer productNum;
     @ApiModelProperty(name = "reviewStatus", value = "审核状态 ： 待处理、暂不采购、无需采购")

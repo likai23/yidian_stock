@@ -1,5 +1,5 @@
 /**
- * @filename:Procurement 2019-06-20 03:10:40
+ * @filename:Procurement 2019-07-09 08:35:05
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd.
  * All right reserved.
@@ -32,7 +32,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 public class Procurement implements Serializable {
 
-    private static final long serialVersionUID = 1561014639850L;
+    private static final long serialVersionUID = 1562675705856L;
 
     @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(name = "id", value = "主键ID")

@@ -22,14 +22,4 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PurchasApplyServiceImpl extends ServiceImpl<PurchasApplyDao, PurchasApply> implements PurchasApplyService {
-    /**
-     * 增加采购主表信息，并且返回主键id
-     *
-     * @param entity
-     * @return
-     */
-    @Override
-    public PurchasApply saveReId(PurchasApply entity) {
-        return baseMapper.saveReId(entity);
-    }
 }

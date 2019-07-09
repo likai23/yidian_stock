@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ydsh.stock.web.dao.ReviewOutStorageDao">
-
-
+    <resultMap id="BaseResultMap" type="com.ydsh.stock.web.entity.ReviewOutStorage">
+        <id column="id" property="id" />
+        <id column="create_id" property="createId" />
+        <id column="review_id" property="reviewId" />
+        <id column="review_status" property="reviewStatus" />
+        <id column="review_remarks" property="reviewRemarks" />
+        <id column="create_time" property="createTime" />
+        <id column="review_time" property="reviewTime" />
+        <id column="customer_id" property="customerId" />
+        <id column="order_id" property="orderId" />
+        <id column="review_out_storage_no" property="reviewOutStorageNo" />
+        <id column="review_out_storage_type" property="reviewOutStorageType" />
+        <id column="num" property="num" />
+        <id column="total_amount" property="totalAmount" />
+        <id column="remarks" property="remarks" />
+        <id column="create_name" property="createName" />
+        <id column="review_name" property="reviewName" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, create_id, review_id, review_status, review_remarks, create_time, review_time, customer_id, order_id, review_out_storage_no, review_out_storage_type, num, total_amount, remarks, create_name, review_name
+    </sql>
 </mapper>

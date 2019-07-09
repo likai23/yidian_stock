@@ -69,12 +69,12 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
         List<PurchasApplyDetail> detail = entity.getDetail();
         int bpaProductNum = 0;
         for (PurchasApplyDetail purchasApplyDetail : detail) {
-            if (purchasApplyDetail.getGcsId() == null
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsNo())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsName())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsType())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsNature())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsSku())
+            if (purchasApplyDetail.getGcId() == null
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcNo())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcName())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcType())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcNature())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcSku())
                     || purchasApplyDetail.getProductNum() == null
                     || purchasApplyDetail.getProductNum() == 0) {
                 log.error("【新增采购申请】{}，请求参数：{}", "参数空异常", entity);
@@ -84,13 +84,9 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
         }
         entity.setProductNum(bpaProductNum);
         // 添加采购主单
-        PurchasApply purchasApply = baseService.saveReId(entity);
-        if (purchasApply == null) {
-            log.error("【新增采购申请】{}，请求参数：{}", "添加采购订单主表失败，数据库操作异常", entity);
-            return result.error("添加采购订单主表失败,请联系管理员！");
-        }
+        baseService.save(entity);
         for (PurchasApplyDetail purchasApplyDetail : detail) {
-            purchasApplyDetail.setPurchasApplyId(purchasApply.getId());
+            purchasApplyDetail.setPurchasApplyId(entity.getId());
             purchasApplyDetail.setCreateId(entity.getCreateId());
             purchasApplyDetail.setCreateName(entity.getCreateName());
             purchasApplyDetail.setReviewStatus(DBDictionaryEnumManager.purchase_status_3.getkey());
@@ -117,12 +113,12 @@ public class PurchasApplyController extends AbstractController<PurchasApplyServi
         // 判断状态是否能修改
         int bpaProductNum = 0;
         for (PurchasApplyDetail purchasApplyDetail : entity.getDetail()) {
-            if (purchasApplyDetail.getGcsId() == null
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsNo())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsName())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsType())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsNature())
-                    || StringUtils.isEmpty(purchasApplyDetail.getGcsSku())
+            if (purchasApplyDetail.getGcId() == null
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcNo())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcName())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcType())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcNature())
+                    || StringUtils.isEmpty(purchasApplyDetail.getGcSku())
                     || purchasApplyDetail.getProductNum() == null
                     || purchasApplyDetail.getProductNum() == 0) {
                 log.error("【采购申请修改】{}，请求参数：{}", "参数空异常", entity);

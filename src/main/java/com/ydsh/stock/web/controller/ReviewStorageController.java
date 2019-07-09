@@ -170,20 +170,20 @@ public class ReviewStorageController extends AbstractController<ReviewStorageSer
         switch (DBDictionaryEnumManager.getBykey(entity.getReviewType())) {
             case coupon_code_review_1:
                 // 作废申请
-                if (entity.getStorageDetailsId() == null || entity.getGcsId() == null
-                        || StringUtils.isEmpty(entity.getGcsName())
-                        || StringUtils.isEmpty(entity.getGcsForm())) {
+                if (entity.getStorageDetailsId() == null || entity.getGcId() == null
+                        || StringUtils.isEmpty(entity.getGcName())
+                        || StringUtils.isEmpty(entity.getGcForm())) {
                     log.error("【审核申请单新增】{},请求参数：{}", "参数空异常！", entity);
                     return result.error("请完善必填项！");
                 }
                 break;
             case coupon_code_review_2:
                 // 延期申请
-                if (entity.getDetail() == null || entity.getDetail().size() == 0 || entity.getGcsId() == null
-                        || StringUtils.isEmpty(entity.getGcsName())
-                        || StringUtils.isEmpty(entity.getGcsForm())
+                if (entity.getDetail() == null || entity.getDetail().size() == 0 || entity.getGcId() == null
+                        || StringUtils.isEmpty(entity.getGcName())
+                        || StringUtils.isEmpty(entity.getGcForm())
                         || StringUtils.isEmpty(entity.getExpiredType())
-                        || StringUtils.isEmpty(entity.getOrNotExport())
+                        || StringUtils.isEmpty(entity.getIsExport())
                         || StringUtils.isEmpty(entity.getExportName())
                         || StringUtils.isEmpty(entity.getExportPhone())) {
                     log.error("【审核申请单新增】{},请求参数：{}", "参数空异常！", entity);
@@ -218,9 +218,9 @@ public class ReviewStorageController extends AbstractController<ReviewStorageSer
             case coupon_code_review_3:
                 // 冻结申请
                 if (entity.getStorageDetailsId() == null
-                        || entity.getGcsId() == null
-                        || StringUtils.isEmpty(entity.getGcsName())
-                        || StringUtils.isEmpty(entity.getGcsForm())) {
+                        || entity.getGcId() == null
+                        || StringUtils.isEmpty(entity.getGcName())
+                        || StringUtils.isEmpty(entity.getGcForm())) {
                     log.error("【审核申请单新增】{},请求参数：{}", "参数空异常！", entity);
                     return result.error("请完善必填项！");
                 }
@@ -232,8 +232,8 @@ public class ReviewStorageController extends AbstractController<ReviewStorageSer
                 break;
             case coupon_code_review_4:
                 // 加密导出申请
-                if (StringUtils.isEmpty(entity.getOrNotExport())
-                        || DBDictionaryEnumManager.yes.getkey().equals(entity.getOrNotExport())
+                if (StringUtils.isEmpty(entity.getIsExport())
+                        || DBDictionaryEnumManager.yes.getkey().equals(entity.getIsExport())
                         || StringUtils.isEmpty(entity.getExportPhone())
                         || StringUtils.isEmpty(entity.getExportName())) {
                     log.error("【审核申请单新增】{},请求参数：{}", "参数空异常！", entity);

@@ -1,5 +1,5 @@
 /**
- * @filename:ReviewInStorageDetails 2019-07-02 11:30:02
+ * @filename:ReviewInStorageDetails 2019-07-09 08:35:06
  * @project ydsh-saas-service-stock  V1.0
  * Copyright(c) 2020 <a href=mailto:yangyanrui@yidianlife.com>xiaoyang</a> Co. Ltd. 
  * All right reserved. 
@@ -29,25 +29,25 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 public class ReviewInStorageDetails implements Serializable {
 
-	private static final long serialVersionUID = 1562038202355L;
+	private static final long serialVersionUID = 1562675706244L;
 	
 	@TableId(value = "id", type = IdType.AUTO)
 	@ApiModelProperty(name = "id" , value = "主键ID")
 	private Long id;
 	@ApiModelProperty(name = "reviewInStorageId" , value = "入库申请主表id")
 	private Long reviewInStorageId;
-	@ApiModelProperty(name = "gcsId" , value = "sku id")
-	private Long gcsId;
-	@ApiModelProperty(name = "gcsNo" , value = "编号")
-	private String gcsNo;
-	@ApiModelProperty(name = "gcsSku" , value = "sku")
-	private String gcsSku;
-	@ApiModelProperty(name = "gcsName" , value = "商品名称")
-	private String gcsName;
-	@ApiModelProperty(name = "gcsDenomination" , value = "面值")
-	private Long gcsDenomination;
-	@ApiModelProperty(name = "gcsType" , value = "商品属性")
-	private String gcsType;
+	@ApiModelProperty(name = "gcId" , value = "sku id")
+	private Long gcId;
+	@ApiModelProperty(name = "gcNo" , value = "编号")
+	private String gcNo;
+	@ApiModelProperty(name = "gcSku" , value = "sku")
+	private String gcSku;
+	@ApiModelProperty(name = "gcName" , value = "商品名称")
+	private String gcName;
+	@ApiModelProperty(name = "gcDenomination" , value = "面值")
+	private Long gcDenomination;
+	@ApiModelProperty(name = "gcType" , value = "商品属性")
+	private String gcType;
 	@ApiModelProperty(name = "supplyPrice" , value = "供应价")
 	private Long supplyPrice;
 	@ApiModelProperty(name = "taxRate" , value = "税率")
@@ -56,8 +56,8 @@ public class ReviewInStorageDetails implements Serializable {
 	private String invoiceType;
 	@ApiModelProperty(name = "settlementType" , value = "结算方式")
 	private String settlementType;
-	@ApiModelProperty(name = "orNotExtension" , value = "是否能延期")
-	private String orNotExtension;
+	@ApiModelProperty(name = "isExtension" , value = "是否能延期")
+	private String isExtension;
 	@ApiModelProperty(name = "procurementNum" , value = "采购数量")
 	private Integer procurementNum;
 	@ApiModelProperty(name = "expectedInStorageNum" , value = "入库数量")
@@ -83,5 +83,5 @@ public class ReviewInStorageDetails implements Serializable {
 	@ApiModelProperty(name = "createTime" , value = "提交时间/创建时间（自动生成）")
 	private Date createTime;
 	@ApiModelProperty(name = "remarks" , value = "备注")
-	private Long remarks;
+	private String remarks;
 }
